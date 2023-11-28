@@ -1,40 +1,64 @@
 <html>
-<head>
-<body>
-<div style="background-color:#b7e3f7">
-<font style="padding:50%">REGISTRATIONFORM</font><br><br>
-<form name="form1" onsubmit="return validationform()">
-<div height="600px"width="50%"align="">
-<label>Name</label>
-<input type="text"name="name"><br>
-<label>password</label>
-<input type="password"name="password"><br>
-<label>Email</label>
-<input type="email" name="email"><br>
-<input type="submitt",value="submitt">&nbsp&nbsp
-</form>
-</div>
+<head><title>form</title>
+<style>
+form{
+border:1px solid #000;
+background-color:#c0f4ff;
+text-align:center;
+padding:30px;
+width:400px;
+border-radius:10px;
+height:300px;}
 </style>
+</head>
+<body align="center">
+<center>
+<form name="form1" onsubmit="return validationform()">
+<h1>Validation Form</h1>
+<table>
+<tr>
+<td><label>Name</label></td>
+<td><input type="text" name="name"></td>
+</tr>
+<tr>
+<td><label>Email</label></td>
+<td><input type="email" name="email"></td>
+</tr>
+<td><label>Password</label></td>
+<td><input type="password"name="password" ></td>
+</tr>
+<td><label>Mobile No.</label></td>
+<td><input type="number" name="number"></td>
+</tr>
+<tr>
+<td><input type="submit">
+</tr>
+</table>
+</form></center>
 <script type="text/javascript">
+
 function validationform()
 {
-var name =document.form1.name.value;
-var password =document.form1.password.value;
-var email =document.form1.email.value;
-var atposition=email.indexOf("@");
-var dotposition=email.lastindexOf(".");
-if(name=="")
-{
-windows.alert("enter a valid name");
-}
-else if(password.length<8)
-{
-windows.alert("enter a strong password");
-}
-else if(atposition<1 || dotposition<atposition+2||dotposition+2>=email.length)
-{
-windows.alert("enter a valid email");
-} 
+var name=document.form1.name.value;
+var password=document.form1.password.value;
+var number=document.form1.number.value;
+ if(name==null||name=="")
+  {
+   alert("Enter a valid name");
+   return false;
+  }
+ if(password.length<8)
+  {
+   alert("Enter a strong password");
+   return false;
+  }
+  if(password.length<10)
+  {
+   alert("Enter a valid number");
+   return false;
+  }
+  
+ }
 </script>
 </body>
 </html>
