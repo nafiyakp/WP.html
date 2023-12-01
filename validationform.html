@@ -1,64 +1,85 @@
 <html>
-<head><title>form</title>
-<style>
-form{
-border:1px solid #000;
-background-color:#c0f4ff;
-text-align:center;
-padding:30px;
-width:400px;
-border-radius:10px;
-height:300px;}
-</style>
-</head>
-<body align="center">
-<center>
-<form name="form1" onsubmit="return validationform()">
-<h1>Validation Form</h1>
-<table>
-<tr>
-<td><label>Name</label></td>
-<td><input type="text" name="name"></td>
-</tr>
-<tr>
-<td><label>Email</label></td>
-<td><input type="email" name="email"></td>
-</tr>
-<td><label>Password</label></td>
-<td><input type="password"name="password" ></td>
-</tr>
-<td><label>Mobile No.</label></td>
-<td><input type="number" name="number"></td>
-</tr>
-<tr>
-<td><input type="submit">
-</tr>
-</table>
-</form></center>
+<title>registration form</title>
+<head>
 <script type="text/javascript">
-
 function validationform()
 {
-var name=document.form1.name.value;
-var password=document.form1.password.value;
-var number=document.form1.number.value;
- if(name==null||name=="")
-  {
-   alert("Enter a valid name");
-   return false;
-  }
- if(password.length<8)
-  {
-   alert("Enter a strong password");
-   return false;
-  }
-  if(password.length<10)
-  {
-   alert("Enter a valid number");
-   return false;
-  }
-  
- }
+var name=document.forms.names.value;
+var email=document.forms.email.value;
+var password=document.forms.password.value;
+var number=document.forms.number.value;
+var atsymbol=email.indexOf("@");
+var dotsymbol=email.indexOf(".");
+if(name==""){
+alert("name must be filled");
+return false;
+}
+if (password.length<8)
+{
+alert("enter a strong password");
+return false;
+}
+if(number.length!=10)
+{
+alert("enter 10 numbers");
+return false;
+}
+if((atsymbol != -1) && (atsymbol !=0) && (dotsymbol != -1) && (dotsymbol !=0)&& (dotsymbol>atsymbol+1) && (email.length>dotsymbol+1))
+{
+alert("email address is valid");
+return true;
+}
+else{
+
+alert("enter valid email");
+return false;
+}
+
+}
 </script>
+<style>
+
+h1{
+color:white;}
+
+div{
+width:364px;
+
+ text-align:center;
+margin-left:500px;
+margin-top:200px;}
+
+</style>
+<body align="center" >
+<div width=50%>
+</div>
+<div  style="background-color:#b7e3f7" >
+<h1>REGISTRATION FORM</h1>
+<form name="forms" onsubmit="return validationform()">
+<table >
+<tr>
+<td>
+<label>Name</label></td>
+<td><input type="text" name="names"></td></tr>
+
+
+<tr><td><label>Email</label></td>
+<td><input type="text" value="" name="email"></td></tr>
+<tr><td><label>Password</label></td>
+<td><input type="password" name="password"></td></tr>
+<tr><td><label>phone no</label></td>
+<td><input type="text" name="number"></td></tr>
+<tr><td><input type="submit"></td></tr>
+</table>
+</form>
+
+</div>
+
+
 </body>
 </html>
+
+
+
+
+
