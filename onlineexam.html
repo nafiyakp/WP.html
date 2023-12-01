@@ -1,111 +1,125 @@
 <html>
-<head  
-<title>User Registration</title>
-<style>
-.box{
-width:70%;
-margin:50px auto;
-padding:20 px;
-border:1px solid;
-border radius:5 px;
-text-aligh=center;
-display.block;
-}
-#logform{
-display:flex;
-align-items:center;
-flex-direction:column;
-font-size:15px;
-font-weight:bold;
-}
-.qform
-{
-align-items:left;
-}
-input{
-padding:5px 10px;
-margin:10px;
-text-align:center;
-}
-.section{
-display:none;
-text-align=left;
-}
-</style>
-</head>
+    <head>
+        <title>User Registration</title>
+            <style>
+                .box {
+                    width: 80%;
+                    margin: 50px auto;
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    text-align: center;
+                    display:block;
+                }
+                #logform{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+                .queform{
+                    align-items: left;
+                }
+                input{
+                    padding:5px 10px;
+                    margin: 10px;
+                    text-align: center;
+                }
+                .section{
+                    display:none ;
+                    text-align: left;
+                }
+            </style>
+        </head>
 <body>
-<div class="box" id="header">
-<h1>candidate login</h1>
-<form name="logform" id="logform">
-<label>Reg.no</label>
-<input type="number" name="regno"placeholder="enter the password">
-</form>
-<button onclick="examVal()">SUBMITT</button>
-</div>
-<div class="box"id="header">
-<h1>candidate login</h1>
-<form name="logform"id="logform">
-<label>Reg.no</label>
-<input type="number" name="regno"placeholder="enter a register number">
-<label>Password</label>
-<input type="password"name="pass"placeholder="enter the password">
-</form>
-<button onclick="examVal()">SUBMITT</buttton>
-</div>
-<div calss="box selection"id="section">
-<h1>questions</h1>
-<form name="queueform" id="queueform">
+
+
+    <div class="box" id="header">
+        <h1>Candidate Login</h1>
+        <form name="logform" id="logform">
+            <label>Register number</label>
+            <input type="number" name="regno" placeholder="Enter the register no.">
+
+            <label>Password</label>
+            <input type="password" name="pass" placeholder="Enter the password">
+
+        </form>
+        <button onclick="examVal()">SUBMIT</button>
+    </div>
+    
+    <div class="box section" id="section">
+        <h1>Questions </h1>
+        <form name="queform" id="queform">
 <label>1.who is the father of nation"?</label>
 <br>
-<input type="radio" name="1" id="">Gandhi
+<input type="radio" name="1" id="">Mahathma Gandhi
 <input type="radio" name="1" id="">jawaharlal Nehru
 <input type="radio" name="1" id="">Ayyangali
 <input type="radio" name="1" id="">Sreenarayanna Guru
 <br>
-<label>2.In what country Elon Musk born"?</label>
+<label>2.In what country Elon Musk born?</label>
 <br>
-<<input type="radio" name="1" id="">America
+<input type="radio" name="1" id="">America
 <input type="radio" name="1" id="">South Africa
 <input type="radio" name="1" id="">Australia
 <input type="radio" name="1" id="">India
 <br>
-<label>3.Which animal is known as the "ship of desert"?</label>
+<label>3.Which colour oow appears first?</label>
 <br>
-<input type="radio" name="1" id="">Camel
-<input type="radio" name="1" id="">Dog
-<input type="radio" name="1" id="">Cow
-<input type="radio" name="1" id="">Cow
+<input type="radio" name="1" id="">red
+<input type="radio" name="1" id="">blue
+<input type="radio" name="1" id="">pink
+<input type="radio" name="1" id="">white
 <br>
-<label>4.what are the charecteristics of good software"?</label>
-<input type="radio" name="1" id="">Camel
-<input type="radio" name="1" id="">Dog
-<input type="radio" name="1" id="">Cat
-<input type="radio" name="1" id="">Cow
+<label>4.what are the charecteristics of good software?</label>
 <br>
-<label>5.How many letters are there in english alphabet"?</label>
+<input type="radio" name="1" id="">viscosity
+<input type="radio" name="1" id="">fragility
+<input type="radio" name="1" id="">readability
+<input type="radio" name="1" id="">needless complexity
+<br>
+<label>5.How many letters are there in english alphabet?</label>
+<br>
 <input type="radio" name="1" id="">20
 <input type="radio" name="1" id="">26
 <input type="radio" name="1" id="">30
 <input type="radio" name="1" id="">36
 <br>
-</form>
-<button onclick="login()">SUBMITT</button>
-</div>
+        
+        </form>
+        <button onclick="login()">SUBMIT</button>
+    </div>
+
 <script>
-fuction examVal(){
-var regno=document.logform.regno.value;
-var pass=document.logform.paa.value;
-console.log(regno);
-console.log(pass);
-document.getElementByld("selection").style.display="block";
-}
-function login()
-{
-var regno=document.logform.regno.value;
-var pass=document.logform.pass.value;
-console.log(regno);
-console.log(pass);
-alert
+       
+        function examVal() {
+            var regno = document.logform.regno.value;
+     var pass = document.logform.pass.value;
+     console.log(regno);
+     console.log(pass);
+            
+
+     
+            document.getElementById('header').style.display="none"
+            document.getElementById('section').style.display = 'block';
+
+        }
+
+        
+        function login() {
+            var regno = document.logform.regno.value;
+     var pass = document.logform.pass.value;
+     console.log(regno);
+     console.log(pass);
+            alert("registrater  "+regno+" Congratulation You are successfully finished Your Exam")
+            document.getElementById('header').style.display="block"
+            document.getElementById('section').style.display = 'none';
+
+        }
+    </script>
+</body>
+</html>
 
 
 
